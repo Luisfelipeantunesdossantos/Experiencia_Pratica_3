@@ -19,7 +19,7 @@ function loadPage(pagina) {
     const form = document.querySelector("#formCadastro");
 
     if (form) {
-      // 1. ANEXA o evento de submit ao formulário
+
       form.addEventListener("submit", validarCadastro);
     }
   } else {
@@ -27,7 +27,6 @@ function loadPage(pagina) {
   }
 }
 
-// 2. Adiciona o listener para navegação SPA
 document.querySelectorAll("[data-page]").forEach(link => {
   link.addEventListener("click", (e) => {
     e.preventDefault();
@@ -35,10 +34,8 @@ document.querySelectorAll("[data-page]").forEach(link => {
   });
 });
 
-// 3. Carrega a página inicial ao carregar o script
 loadPage("home");
 
-// 4. Lógica para o menu mobile
 const menuToggle = document.querySelector('.menu-toggle');
 const nav = document.querySelector('nav');
 
@@ -47,4 +44,3 @@ if (menuToggle && nav) {
         nav.classList.toggle('ativo');
     });
 }
-// <--- A chave extra foi removida daqui!
